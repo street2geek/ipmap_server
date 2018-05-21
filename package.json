@@ -1,0 +1,22 @@
+{
+  "name": "honeypot",
+  "version": "1.0.0",
+  "description": "honeypot data stream",
+  "main": "server.js",
+  "author": "WBaugh@Nettitude",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "hapi": "^17.2.3",
+    "mongodb": "^3.0.4",
+    "nes": "^7.2.0",
+    "rxjs": "^5.5.8",
+    "ws": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}
