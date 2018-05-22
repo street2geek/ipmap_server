@@ -1,12 +1,15 @@
 FROM node:9
 
-WORKDIR /server
+WORKDIR /app
 
-COPY package.json /app
-RUN yarn install
-COPY . /server
+COPY package*.json ./
 
-CMD node server.js
+ADD . /app
 
-EXPOSE 8080
+RUN npm install
+
+EXPOSE 8000
+
+# Run the application
+CMD ["npm", "start"]
 
