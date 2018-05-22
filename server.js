@@ -3,7 +3,10 @@ global.__basedir = __dirname;
 const Hapi = require("hapi");
 const Nes = require("nes");
 
-const server = Hapi.server();
+const server = Hapi.server({
+  host: "45.77.90.193",
+  port: 80
+});
 
 const init = async () => {
   await server.register([
