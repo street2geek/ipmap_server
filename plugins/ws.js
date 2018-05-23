@@ -17,7 +17,6 @@ module.exports = {
       const wsMessage$ = new Rx.Observable(observer => {
         ws.on("message", data => {
           if (false) {
-            console.error("True should close socket");
             ws.close();
           } else {
             observer.next(JSON.parse(data));
