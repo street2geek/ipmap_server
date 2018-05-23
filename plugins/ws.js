@@ -16,16 +16,11 @@ module.exports = {
 
       const wsMessage$ = new Rx.Observable(observer => {
         ws.on("message", data => {
-          if (false) {
-            console.error("Client state is ");
-            ws.close();
-          } else {
-            observer.next(JSON.parse(data));
-          }
+          observer.next(JSON.parse(data));
         });
       });
 
-      wsMessage$.throttleTime(200).subscribe(
+      wsMessage$.throttleTime(150).subscribe(
         data => {
           let clientData = {
             timestamp: data.timestamp,
@@ -48,11 +43,15 @@ module.exports = {
       );
 
       ws.on("close", e => {
-        ws.close();
         console.log("Socket closed. Reconnect will be attempted in 1 second.");
         setTimeout(() => {
           connect();
         }, 1000);
+      });
+
+      ws.on("error", err => {
+        console.log("Socket error:", err.message);
+        ws.close();
       });
     }
 
