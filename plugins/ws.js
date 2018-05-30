@@ -1,6 +1,7 @@
 "use strict";
 const WebSocket = require("ws");
 const Rx = require("rxjs/Rx");
+const dayjs = require("dayjs");
 
 module.exports = {
   name: "webSocket",
@@ -23,7 +24,7 @@ module.exports = {
       wsMessage$.throttleTime(150).subscribe(
         data => {
           let clientData = {
-            timestamp: data.timestamp,
+            timestamp: dayjs(data.timestamp).format("MM/DD/YYYY HH:mm:ss"),
             service: null /* map port to protocol */,
             src: {
               ...data.src_ip_geo,

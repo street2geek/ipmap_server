@@ -10,6 +10,7 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "dayjs": "^1.6.4",
     "hapi": "^17.2.3",
     "mongodb": "^3.0.4",
     "nes": "^7.2.0",
