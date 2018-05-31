@@ -419,9 +419,9 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-dayjs@^1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.6.3.tgz#5397bfc7981d0028b5c4b5d0deff350be835885f"
+dayjs@^1.6.4:
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.6.4.tgz#7e66f0a43344dfd7bada2e8f7113813dd9d0d08f"
 
 debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
