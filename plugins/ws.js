@@ -21,10 +21,10 @@ module.exports = {
         });
       });
 
-      wsMessage$.throttleTime(150).subscribe(
+      wsMessage$.throttleTime(100).subscribe(
         data => {
           let clientData = {
-            timestamp: dayjs(data.timestamp).format("MM/DD/YYYY HH:mm:ss"),
+            timestamp: dayjs().format("MM/DD/YYYY HH:mm:ss"),
             service: null /* map port to protocol */,
             src: {
               ...data.src_ip_geo,
