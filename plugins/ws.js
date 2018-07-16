@@ -38,7 +38,9 @@ module.exports = {
             }
           };
           console.log(clientData);
-          server.publish("/", clientData);
+          if(clientData.src || clientData.dst){
+            server.publish("/", clientData);
+          }
         },
         err => console.log(err)
       );
