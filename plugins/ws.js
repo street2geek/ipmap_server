@@ -38,7 +38,7 @@ module.exports = {
             }
           };
           console.log(clientData);
-          if(clientData.src || clientData.dst){
+          if(data.dst_ip_geo){
             server.publish("/", clientData);
           }
         },
