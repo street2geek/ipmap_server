@@ -7,7 +7,7 @@ module.exports = {
   name: "webSocket",
   register: (server, options) => {
     function connect() {
-      const ws = new WebSocket("ws://45.76.131.223:8080", {
+      const ws = new WebSocket("ws://45.76.131.223:8090", {
         perMessageDeflate: false
       });
 
@@ -37,10 +37,12 @@ module.exports = {
               port: data.dst_p
             }
           };
-          console.log(clientData);
+          
           if(data.dst_ip_geo){
             server.publish("/", clientData);
           }
+
+          console.log(clientData);
         },
         err => console.log(err)
       );
