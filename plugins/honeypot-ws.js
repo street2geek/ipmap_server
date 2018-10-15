@@ -40,6 +40,7 @@ module.exports = {
           console.log(clientData);
           if(data.dst_ip_geo){
             server.publish("/", clientData);
+            server.methods.mongo.insertOne(clientData);
           }
         },
         err => console.log(err)

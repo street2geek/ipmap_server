@@ -11,8 +11,8 @@ const server = Hapi.server({
 const init = async () => {
   await server.register([
     Nes,
-    //require("./plugins/db"),
-    require("./plugins/ws")
+    require("./plugins/mongo-db"),
+    require("./plugins/honeypot-ws")
   ]);
 
   server.subscription("/");
